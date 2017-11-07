@@ -1,0 +1,51 @@
+﻿@model IEnumerable<FantasyBasketball.Models.Player>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Position.positionDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Team.teamName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.playerLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.playerFirstName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position.positionDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Team.teamName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.playerLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.playerFirstName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.playerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.playerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.playerID })
+        </td>
+    </tr>
+}
+
+</table>

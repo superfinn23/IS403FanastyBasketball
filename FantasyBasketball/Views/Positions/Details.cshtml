@@ -1,0 +1,26 @@
+﻿@model FantasyBasketball.Models.Position
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Position</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.positionDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.positionDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.positionCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
